@@ -2,7 +2,7 @@ schemaVersion: 2.2.0
 attributes:
   controller.devfile.io/storage-type: per-workspace
 metadata:
-  name: che-nested-containers-demo
+  name: devspaces-nested-podman-privileged
 projects:
 - name: devspaces-nested-podman-privileged
   git:
@@ -52,7 +52,7 @@ components:
     - name: SHELL
       value: "/bin/zsh"
     - name: VSCODE_DEFAULT_WORKSPACE
-      value: "/projects/openshift-nested-containers/my-workspace.code-workspace"
+      value: "/projects/devspaces-nested-podman-privileged/my-workspace.code-workspace"
     - name: DOCKER_HOST
       value: "unix:///tmp/podman.sock"
     - name: CONTAINER_HOST
