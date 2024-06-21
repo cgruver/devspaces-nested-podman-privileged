@@ -1,21 +1,6 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
-			"path": "../ansible-demo"
-		},
-		{
-			"path": "../quarkus-dev-services-demo"
-		},
-		{
-			"path": "../sam-cli-demo"
-		},
-		{
-			"path": "../localstack-demo"
-		},
-		{
 			"name": "sam-cli-demo",
 			"path": "/projects/sam-cli-demo"
 		},
@@ -30,6 +15,10 @@
 		{
 			"name": "ansible-demo",
 			"path": "/projects/ansible-demo"
+		},
+		{
+			"name": "devspaces-nested-podman-privileged",
+			"path": "/projects/devspaces-nested-podman-privileged"
 		}
 	],
 	"extensions": {
@@ -50,7 +39,7 @@
 		"workbench.colorTheme": "Winter is Coming (Light)",
 		"workbench.preferredDarkColorTheme": "Winter is Coming (Dark Blue)",
 		"workbench.preferredLightColorTheme": "Winter is Coming (Light)",
-        "editor.wordWrap": "on",
+		"editor.wordWrap": "on",
 		"files.autoSave": "off"
 	}
 }
