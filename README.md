@@ -8,7 +8,7 @@ __Note:__ I recommend that this configuration only be used on an OpenShift clust
 
 __Note:__ This differs from the default `container-build` SCC which is bundled with Dev Spaces by adding the entry: `allowPrivilegedContainer: true`
 
-The containers in a workspace will still run as a random non-root UID.  However, they will be capable of running as privileged which allows them to run in an unconstrained `selinux` context, and gives the container an unmasked root filesystem. 
+The containers in a workspace will still run as a random non-root UID.  However, they will be capable of running as privileged which allows them to run in an unconstrained `selinux` context, and gives the container unmasked `/dev` and `/proc` filesystems. 
 
 ```bash
 cat << EOF | oc apply -f -
