@@ -232,5 +232,5 @@ components:
    ```bash
    unset CONTAINER_HOST
    export API_BASE_URL=https://$(oc get route ${DEVWORKSPACE_ID}-dev-tools-8082-https-fights -o jsonpath={.spec.host})
-   podman compose -f super-heroes-compose.yaml -f super-heroes-monitoring.yaml up --remove-orphans
+   podman compose -f /projects/quarkus-super-heroes/deploy/docker-compose/dev-spaces-java17.yml -f /projects/quarkus-super-heroes/deploy/docker-compose/dev-spaces-monitoring.yml up --remove-orphans
    ```
