@@ -1,6 +1,10 @@
 {
 	"folders": [
 		{
+			"name": "devspaces-nested-podman-privileged",
+			"path": "/projects/devspaces-nested-podman-privileged"
+		},
+		{
 			"name": "sam-cli-demo",
 			"path": "/projects/sam-cli-demo"
 		},
@@ -17,8 +21,8 @@
 			"path": "/projects/ansible-demo"
 		},
 		{
-			"name": "devspaces-nested-podman-privileged",
-			"path": "/projects/devspaces-nested-podman-privileged"
+			"name": "dev-spaces-podman-compose-quarkus-superheroes",
+			"path": "/projects/dev-spaces-podman-compose-quarkus-superheroes"
 		}
 	],
 	"extensions": {

@@ -39,6 +39,13 @@ projects:
       revision: main
     remotes:
       origin: https://github.com/cgruver/che-ansible-demo.git
+- name: dev-spaces-podman-compose-quarkus-superheroes
+  git:
+    checkoutFrom:
+      remote: origin
+      revision: main
+    remotes:
+      origin: https://github.com/cgruver/dev-spaces-podman-compose-quarkus-superheroes.git
 components:
 - name: dev-tools
   attributes:
