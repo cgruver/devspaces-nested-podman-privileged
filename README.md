@@ -1,8 +1,6 @@
 # Enabling `podman run` in OpenShift Dev Spaces with a Rootless Privileged Workspace
 
-__Note:__ It is recommended that this configuration only be used on an OpenShift cluster that is accessible by very trusted users.  Because the workspace is allowed to run privileged non-root containers, there is risk of breakout into the underlying compute node.
-
-I would recommend that this configuration be deployed to a cluster that is dedicated to developer use, and only accessible by a trusted group of developers.
+__Note:__ I recommend that this configuration only be used on an OpenShift cluster that is accessible by very trusted users.  Because the workspace is allowed to run privileged non-root containers, there is risk of breakout into the underlying compute node.  Therefore, I would recommend that this configuration be deployed to a cluster that is dedicated to developer use, and only accessible by a trusted group of developers.
 
 ## Allow privileged rootless pods in Dev Spaces
 
@@ -225,4 +223,14 @@ components:
    ```bash
    make deploy
    awslocal s3 ls s3://archive-bucket/
+   ```
+
+## Demo of `podman compose` With the Quarkus Superheroes App
+
+1. Open a terminal in the `quarkus-super-heroes` project:
+
+   ```bash
+   unset CONTAINER_HOST
+   export API_BASE_URL=https://$(oc get route ${DEVWORKSPACE_ID}-dev-tools-8082-https-fights -o jsonpath={.spec.host})
+   podman compose -f super-heroes-compose.yaml -f super-heroes-monitoring.yaml up --remove-orphans
    ```

@@ -39,21 +39,20 @@ projects:
       revision: main
     remotes:
       origin: https://github.com/cgruver/che-ansible-demo.git
-- name: dev-spaces-podman-compose-quarkus-superheroes
+- name: quarkus-super-heroes
   git:
     checkoutFrom:
       remote: origin
       revision: main
     remotes:
-      origin: https://github.com/cgruver/dev-spaces-podman-compose-quarkus-superheroes.git
+      origin: https://github.com/cgruver/quarkus-super-heroes.git
 components:
 - name: dev-tools
   attributes:
     container-overrides: {"securityContext": {"privileged": true}}
   container: 
-    # image: quay.io/cgruver0/che/nested-fedora:latest
     image: quay.io/cgruver0/che/nested:latest
-    memoryLimit: 6Gi
+    memoryLimit: 12Gi
     mountSources: true
     env:
     - name: SHELL
@@ -72,6 +71,55 @@ components:
       value: /tmp/podman.sock
     - name: DOCKER_CMD
       value: podman
+    - name: FIGHTS_SERVICE_PORT
+      value: "8080"
+    endpoints:
+      - name: https-ui
+        targetPort: 8080
+        exposure: public
+        protocol: https
+      - name: https-heroes
+        targetPort: 8083
+        exposure: public
+        protocol: https
+      - name: https-villains
+        targetPort: 8084
+        exposure: public
+        protocol: https
+      - name: https-fights
+        targetPort: 8082
+        exposure: public
+        protocol: https
+      - name: https-stats
+        targetPort: 8085
+        exposure: public
+        protocol: https
+      - name: https-narration
+        targetPort: 8087
+        exposure: public
+        protocol: https
+      - name: https-locations
+        targetPort: 8089
+        exposure: public
+        protocol: https
+      - name: debug-ui
+        targetPort: 5005
+        exposure: internal
+      - name: debug-villains
+        targetPort: 5006
+        exposure: internal
+      - name: debug-heroes
+        targetPort: 5007
+        exposure: internal
+      - name: debug-fights
+        targetPort: 5008
+        exposure: internal
+      - name: debug-stats
+        targetPort: 5009
+        exposure: internal
+      - name: node-port
+        targetPort: 4200
+        exposure: internal
 - volume:
     size: 10Gi
   name: projects
