@@ -219,6 +219,8 @@ The elements of this image that are important are as follows:
 
 ## Demos for Nested Podman
 
+Create a Dev Spaces workspace from this code repo.
+
 ### Run a container in the workspace:
 
 1. Open a terminal into the `devspaces-nested-podman-privileged` project.
