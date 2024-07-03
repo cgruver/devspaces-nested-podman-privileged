@@ -221,7 +221,7 @@ The elements of this image that are important are as follows:
 
 ### Run a container in the workspace:
 
-1. Open a terminal into the `openshift-nested-containers` project.
+1. Open a terminal into the `devspaces-nested-podman-privileged` project.
 
 1. Clear the `CONTAINER_HOST` environment variable: (We're going to run this without a "remote" podman socket)
 
@@ -233,7 +233,18 @@ The elements of this image that are important are as follows:
 
    ```bash
    podman run -d --rm --name webserver -p 8080:80 quay.io/libpod/banner
+   ```
+
+   Probe the HTTP server in the container:
+
+   ```bash
    curl http://localhost:8080
+   ```
+
+   Remove the container
+
+   ```bash
+   podman kill webserver
    ```
 
 1. Run an interactive container:
